@@ -1,8 +1,8 @@
-list = ["make dinner", "clean up the flat"]
+list = []
 
 def show_tasks():
     index = 0
-    print("\nYour tasks:\n")
+    print("\nYour tasks:")
     for task in list:
         index += 1
         print(f"{index}. {task.capitalize()}")
@@ -13,8 +13,58 @@ def add_task():
     print("\nThe task was added successfully!")
 
 def task_delete():
-    pass
+    while True:
+        choice = 0
+        exception = False
+        show_tasks()
+        deleted_task = int(input("\nEnter the number of task you want to delete: "))
+        
+        for task in list:
+            try:
+                list.remove(list[deleted_task - 1])
+                print("Your task has been deleted successfully!")
+                break
+            except IndexError:
+                print("No such number was found.")
+                exception = True
+                break
+        
+        if exception == True:
+            continue
 
+        while choice != "Y" and choice != "N":
+            choice = input("\nDo you want to delete more task? (Y/N) > ")
+
+            if choice.capitalize() == "Y":
+                break
+            elif choice.capitalize() == "N":
+                print("Going back to menu...")
+                break
+            else:
+                print("Enter proper data.")
+
+        if choice.capitalize() == "N":
+            break
+        
+
+def save_tasks_to_file():
+    file = open("tasks.txt", "w")
+    
+    for task in list:
+        file.write(task + "\n")
+    
+    print("Tasks have been saved successfully!")
+
+def read_tasks_from_file():
+    try:
+        file = open("tasks.txt")
+        for line in file:
+            list.append(line.strip())
+    except FileNotFoundError:
+        pass
+
+read_tasks_from_file()
+        
 while True:
     user_choice = 0
 
@@ -38,9 +88,7 @@ while True:
         add_task()
     if user_choice == 3:
         task_delete()
+    if user_choice == 4:
+        save_tasks_to_file()
     if user_choice == 5:
         break
-
-   
-
-
