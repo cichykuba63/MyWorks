@@ -52,14 +52,19 @@ def save_tasks_to_file():
     
     for task in list:
         file.write(task + "\n")
+
+    file.close()
     
     print("Tasks have been saved successfully!")
 
 def read_tasks_from_file():
     try:
         file = open("tasks.txt")
+
         for line in file:
             list.append(line.strip())
+
+        file.close()
     except FileNotFoundError:
         pass
 
