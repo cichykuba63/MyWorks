@@ -8,17 +8,29 @@ def show_tasks():
         print(f"{index}. {task.capitalize()}")
 
 def add_task():
-    task_describe = input("\nEnter a task you want to add: ")
-    list.append(task_describe.lower())
-    print("\nThe task was added successfully!")
+    while True:
+        task_describe = input("\nEnter a task you want to add: ")
+
+        if task_describe == "" or task_describe.isspace() == True:
+            print("Enter proper description")
+            continue
+
+        list.append(task_describe.lower())
+        print("\nThe task was added successfully!")
+        break
 
 def task_delete():
     while True:
         choice = 0
         exception = False
         show_tasks()
-        deleted_task = int(input("\nEnter the number of task you want to delete: "))
         
+        try:
+            deleted_task = int(input("\nEnter the number of task you want to delete: "))
+        except ValueError:
+            print("Enter proper data.")
+            continue
+
         for task in list:
             try:
                 list.remove(list[deleted_task - 1])
@@ -31,21 +43,23 @@ def task_delete():
         
         if exception == True:
             continue
-
-        while choice != "Y" and choice != "N":
-            choice = input("\nDo you want to delete more task? (Y/N) > ")
-
-            if choice.capitalize() == "Y":
-                break
-            elif choice.capitalize() == "N":
-                print("Going back to menu...")
-                break
-            else:
-                print("Enter proper data.")
-
-        if choice.capitalize() == "N":
-            break
         
+        if len(list) != 0:
+            while choice != "Y" and choice != "N":
+                choice = input("\nDo you want to delete more task? (Y/N) > ")
+
+                if choice.capitalize() == "Y":
+                    break
+                elif choice.capitalize() == "N":
+                    print("Going back to menu...")
+                    break
+                else:
+                    print("Enter proper data.")
+
+            if choice.capitalize() == "N":
+                break
+        else:
+            break
 
 def save_tasks_to_file():
     file = open("tasks.txt", "w")
