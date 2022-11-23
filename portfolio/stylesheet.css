@@ -1,0 +1,155 @@
+body
+{
+    background-color:rgb(118, 112, 106);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+#container 
+{  
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#name
+{
+    text-align: left;
+    font-size: 60px;
+    padding: 20px;
+    float: left;
+    width: 460px;
+}
+
+#time
+{
+    margin-left: 40px;
+    font-size: 60px;
+    padding: 20px;
+    float: left;
+    width: 420px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contain
+{
+    float: left;
+    width: 50%;
+}
+
+.c1, .c2, .c3
+{
+    width: 230px;
+    height: 142px;
+    margin: 10px;
+}
+
+.c1
+{
+    background-color: rgb(62, 229, 226);
+    float: left;
+    text-align: center;
+    font-size: 30px;
+}
+
+.c2
+{
+    background-color: rgb(48, 195, 70);
+    float: left;
+    text-align: center;
+    font-size: 30px;
+}
+
+.c3
+{
+    background-color: rgb(220, 176, 87);
+    float: left;
+    text-align: center;
+    font-size: 30px;
+}
+
+.c4
+{
+    margin: 10px;
+    width: 480px;
+    height: 142px;
+    background-color:rgb(170, 166, 123);
+    text-align: center;
+    font-size: 22px;
+}
+
+.c5
+{
+    margin: 10px;
+    width: 480px;
+    height: 304px;
+    background-color: rgb(203, 194, 123);
+}
+
+.c6, .c7, .c8, .c9
+{
+    margin: 10px;
+    float: left;
+    height: 142px;
+    width: 105px;
+}
+
+.c6
+{
+    background-color: #c4302b;
+}
+
+.c7
+{
+    background-color: #3b5998;
+}
+
+.c8
+{
+    background-color: #db4a39;
+}
+
+.c9
+{
+    background-color: #00acee;
+}
+
+#footer
+{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#text
+{
+    height: 294px;
+    width: 460px;
+    font-size: 19px;
+    padding: 10px;
+    text-align: justify;
+}
+
+a
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#function
+{
+    float: left;
+    width: 294px;
+    text-align: left;
+    margin-left: -50px;
+}
+
+#icon
+{
+    float: left;
+    width: 126px;
+    margin-top: -10px;
+    margin-left: 20px;
+    margin-right: -20px;
+}
